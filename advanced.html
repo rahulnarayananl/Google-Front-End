@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Advanced Search</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="icon" href="img/logo1.png" type="image/png">
+    <script type="text/javascript">
+        function postsearch(e, textarea){
+            var code = (e.keyCode ? e.keyCode : e.which);
+            if(code == 13) { //Enter keycode
+                window.location.href ='http://www.google.com/search?as_q='+document.getElementById('asq').value;
+            }
+        }
+        function postequals(e, textarea){
+            var code = (e.keyCode ? e.keyCode : e.which);
+            if(code == 13) { //Enter keycode
+                window.location.href ='https://www.google.com/search?as_q=&as_epq='+document.getElementById('asqequals').value;
+            }
+        }
+        function postany(e, textarea){
+            var code = (e.keyCode ? e.keyCode : e.which);
+            if(code == 13) { //Enter keycode
+                window.location.href ='https://www.google.com/search?as_q=&as_epq=&as_oq='+document.getElementById('asany').value;
+            }
+        }
+        function postnone(e, textarea){
+            var code = (e.keyCode ? e.keyCode : e.which);
+            if(code == 13) { //Enter keycode
+                window.location.href ='https://www.google.com/search?as_q=&as_epq=&as_oq=&as_eq='+document.getElementById('anynone').value;
+            }
+        }
+
+    </script>
+    </head>
+    <body>
+
+    	<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarResponsive" aria-controls="navbarResponsive"
+            aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <img src="img/google.svg.webp" style="width:90px;height:30px;">
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="images.html">Images</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </nav>
+        <h5 class="customh5">Advanced Search</h5>
+        <hr>
+        <div class="container-login100">
+        <p style="font-size: 18px;">Find Pages With..</p>
+        <form>
+
+          <div class="form-group row">
+
+            <label class="col-form-label col-2 col-form-label-sm" style="font-size: 14px;">all these words:</label>
+            <div class="col-4">
+              <input type="text" id="asq" name="asq" class="form-control form-control-sm" onKeyPress="postsearch(event, this)">
+            </div>
+
+            <div class="col-3">
+                <p style="font-size: 12px;">Type the important words: <span style="font-family: cursive;">  tri-colour rat terrier</p>
+            </div>
+
+          </div>
+
+          <div class="form-group row">
+            <label class="col-form-label col-2 col-form-label-sm" style="font-size: 14px;">this exact word or phrase:</label>
+            <div class="col-4">
+              <input type="text" id="asqequals" name="asqequals" class="form-control form-control-sm" onKeyPress="postequals(event, this)">
+            </div>
+            <div class="col-3">
+                <p style="font-size: 12px;">Put exact words in quotes:<span style="font-family: cursive;"> "rat terrier"</span></p>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-2 col-form-label-sm" style="font-size: 14px;">any of these words:</label>
+            <div class="col-4">
+              <input type="text" id="asany" name="asany" class="form-control form-control-sm" onKeyPress="postany(event, this)">
+            </div>
+            <div class="col-3">
+                <p style="font-size: 12px;">Type OR between all the words you want: <span style="font-family: cursive;">  miniature OR standard</p>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-2 col-form-label-sm" style="font-size: 14px;">none of these words:</label>
+            <div class="col-4">
+              <input type="text" id="anynone" name="anynone" class="form-control form-control-sm" onKeyPress="postnone(event, this)">
+
+
+              <button type="submit" class="btn btn-primary button-ad" onclick="window.location = 'http://www.google.com/search?as_q='+asq.value+'&as_epq='+asqequals.value+'&as_oq='+asany.value+'&as_eq='+anynone.value;return false;">Advanced Search</button>
+
+
+            </div>
+            <div class="col-3">
+                <p style="font-size: 12px;">Put a minus sign just before words that you don't want: <span style="font-family: cursive;">  -rodent, -"Jack Russell"</p>
+            </div>
+          </div>
+        </form>  
+    </div>
+
+        <nav class="navbar fixed-bottom navbar-light bg-light justify-content-start">
+        <a class="navbar-brand" href="https://www.google.com/intl/en_in/ads/?subid=ww-ww-et-g-awa-a-g_hpafoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpafooter&fg=1" style="font-size: 14px;">Advertising</a>
+        <a class="navbar-brand" href="https://www.google.com/services/?subid=ww-ww-et-g-awa-a-g_hpbfoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpbfooter&fg=1" style="font-size: 14px;">Business</a>
+        <a class="navbar-brand" href="https://about.google/?utm_source=google-IN&utm_medium=referral&utm_campaign=hp-footer&fg=1" style="font-size: 14px;">About</a>
+        </nav>
+        
+
+    </body>
+</html>
